@@ -7,4 +7,6 @@ class Routes {
    static const String Crypto_market_Home = '/Crypto_market_Home';
    static const String Commodity_Home = '/Commodity_Home';
     static const String Gallery_Home = '/Gallery_Home';
+    static const String Screen_Home = '/Screen_Home';
+   static const String search = '/search';
 }

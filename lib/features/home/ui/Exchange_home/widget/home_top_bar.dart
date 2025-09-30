@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:stock_market/core/routing/routes.dart';
 import 'package:stock_market/core/theming/colors.dart';
 
 class HomeTopBar extends StatelessWidget {
@@ -9,17 +10,21 @@ class HomeTopBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.infinity,
+      width: 402.w,
+      height: 83.h,
       decoration: BoxDecoration(color: ColorsManager.darkorange),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          IconButton(
-            color: ColorsManager.white,
-
-            icon: const Icon(Icons.menu),
-            iconSize: 25,
-            onPressed: () {},
+          Builder(
+            builder: (context) => IconButton(
+              color: Colors.white,
+              icon: const Icon(Icons.menu),
+              iconSize: 25,
+              onPressed: () {
+                Scaffold.of(context).openDrawer(); // فتح القائمة الجانبية
+              },
+            ),
           ),
           Spacer(),
           SvgPicture.asset(
@@ -40,7 +45,9 @@ class HomeTopBar extends StatelessWidget {
 
             icon: const Icon(Icons.search),
             iconSize: 25,
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).pushNamed(Routes.search);
+            },
           ),
         ],
       ),

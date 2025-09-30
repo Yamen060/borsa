@@ -13,4 +13,10 @@ class ColorsManager {
   static const Color violetblue = Color(0xFF3A1F9C);
   static const Color mediumgray = Color(0xFF919191);
   static const Color darkblue = Color(0xFF3044A1);
+  static const Color beige = Color(0xFFE8E6E6);
+  static const Color darkcharcoalgray  = Color(0xFF444444);
+  static const Color averagegray = Color(0xFF6A6969);
+  static  const Color darkbrownishred = Color(0xFF5D4040);
+   static  const Color mediumcoolgray = Color(0xFF9F9F9F);
+   
 }

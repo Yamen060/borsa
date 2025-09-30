@@ -66,7 +66,7 @@ class _StockBarState extends State<StockBar> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(item['text']!, style: TextStyles.font10lackMedium),
+              Text(item['text']!, style: TextStyles.font10blackMedium),
               SizedBox(height: 8.h),
               SvgPicture.asset(item['iconPath']!, width: 24.w, height: 24.h),
               SizedBox(height: 12.h, width: 12.w),

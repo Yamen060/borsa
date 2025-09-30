@@ -8,6 +8,7 @@ import 'package:stock_market/features/home/ui/Exchange_home/Exchange.dart';
 import 'package:stock_market/features/home/ui/Gallery_home/gallery_home.dart';
 import 'package:stock_market/features/home/ui/Puplic_offering_Home/Puplic_offering_Home.dart';
 import 'package:stock_market/features/home/ui/home_screen.dart';
+import 'package:stock_market/features/home/ui/widgets/search.dart';
 
 class AppRouter {
   Route? generateRoute(RouteSettings settings) {
@@ -26,12 +27,20 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const PuplicOfferingHome());
       case '/Crypto_market_Home':
         return MaterialPageRoute(builder: (_) => const CryptoMarketHome());
-     
+
       case '/Commodity_Home':
         return MaterialPageRoute(builder: (_) => const CommodityHome());
-     
+
       case '/Gallery_Home':
-        return MaterialPageRoute(builder: (_) => const GalleryHome());                                                
+        return MaterialPageRoute(builder: (_) => const GalleryHome());
+
+      case '/Screen_Home':
+        return MaterialPageRoute(builder: (_) => const HomeScreen());
+      case '/search':
+        return MaterialPageRoute(builder: (_) =>  Search());
+
+
+
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(

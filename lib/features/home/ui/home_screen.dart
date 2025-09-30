@@ -8,6 +8,7 @@ import 'package:stock_market/features/home/ui/Exchange_home/widget/home_top_bar.
 import 'package:stock_market/features/home/ui/Exchange_home/widget/image_indicator.dart';
 import 'package:stock_market/features/home/ui/Exchange_home/widget/logos.dart';
 import 'package:stock_market/features/home/ui/Exchange_home/widget/most_read_news.dart';
+import 'package:stock_market/features/home/ui/widgets/app_drawer.dart';
 import 'package:stock_market/features/home/ui/widgets/auther_card.dart';
 import 'package:stock_market/features/home/ui/widgets/company_news.dart';
 import 'package:stock_market/features/home/ui/widgets/company_news_picture.dart';
@@ -32,6 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: const AppDrawer(),
       backgroundColor: const Color(0xffE9DBDB),
       body: SafeArea(
         child: Stack(

@@ -4,8 +4,13 @@ import 'package:stock_market/core/theming/colors.dart';
 import 'package:stock_market/core/theming/font_weight.dart';
 
 class TextStyles {
-  static TextStyle font10lackMedium = TextStyle(
+  static TextStyle font10blackMedium = TextStyle(
     fontSize: 10.sp,
+    fontWeight: FontWeightHelper.medium,
+    color: ColorsManager.black,
+  );
+    static TextStyle font16blackMedium = TextStyle(
+    fontSize: 16.sp,
     fontWeight: FontWeightHelper.medium,
     color: ColorsManager.black,
   );
@@ -14,10 +19,25 @@ class TextStyles {
     fontWeight: FontWeightHelper.semiBold,
     color: ColorsManager.darkorange,
   );
+  static TextStyle font16darkorangeSemiBold = TextStyle(
+    fontSize: 16.sp,
+    fontWeight: FontWeightHelper.semiBold,
+    color: ColorsManager.darkorange,
+  );
+  static TextStyle font16averagegraySemiBold = TextStyle(
+    fontSize: 16.sp,
+    fontWeight: FontWeightHelper.semiBold,
+    color: ColorsManager.averagegray,
+  );
   static TextStyle font18SemiBold = TextStyle(
     fontSize: 18.sp,
     fontWeight: FontWeightHelper.semiBold,
     color: ColorsManager.lightgray,
+  );
+  static TextStyle font20blackSemiBold = TextStyle(
+    fontSize: 20.sp,
+    fontWeight: FontWeightHelper.semiBold,
+    color: ColorsManager.black,
   );
   static TextStyle font16BlackBold = TextStyle(
     fontSize: 16.sp,
@@ -50,10 +70,30 @@ class TextStyles {
     fontWeight: FontWeightHelper.regular,
     color: ColorsManager.lightgray,
   );
+    static TextStyle font12averagegrayreguler = TextStyle(
+    fontSize: 12.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: ColorsManager.averagegray,
+  );
+     static TextStyle font12blackreguler = TextStyle(
+    fontSize: 12.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: ColorsManager.black,
+  );
   static TextStyle font16blackreguler = TextStyle(
     fontSize: 16.sp,
     fontWeight: FontWeightHelper.regular,
     color: ColorsManager.black,
+  );
+  static TextStyle font16lightgrayreguler = TextStyle(
+    fontSize: 16.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: ColorsManager.lightgray,
+  );
+  static TextStyle font16whitereguler = TextStyle(
+    fontSize: 16.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: ColorsManager.white,
   );
   static TextStyle font14lightredBold = TextStyle(
     fontSize: 14.sp,
@@ -65,7 +105,7 @@ class TextStyles {
     fontWeight: FontWeightHelper.bold,
     color: ColorsManager.black,
   );
- static TextStyle font12darkbold = TextStyle(
+  static TextStyle font12darkbold = TextStyle(
     fontSize: 12.sp,
     fontWeight: FontWeightHelper.bold,
     color: ColorsManager.black,

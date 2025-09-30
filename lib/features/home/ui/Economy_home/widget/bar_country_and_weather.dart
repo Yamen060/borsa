@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stock_market/core/theming/colors.dart';
+import 'package:stock_market/core/theming/styles.dart';
 
 class BarCountryAndWeather extends StatefulWidget {
   const BarCountryAndWeather({super.key});
@@ -42,7 +43,7 @@ class _BarCountryAndWeatherState extends State<BarCountryAndWeather> {
           colors: [ColorsManager.darkblue, ColorsManager.darkorange],
         ),
       ),
-      height: 44.h,
+      height: 50.h,
       width: 386.w,
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
@@ -54,11 +55,7 @@ class _BarCountryAndWeatherState extends State<BarCountryAndWeather> {
               padding: const EdgeInsets.symmetric(horizontal: 8.0),
               child: Text(
                 _selectedProvince,
-                style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16,
-                  color: Colors.white,
-                ),
+                style: TextStyles.font16lightgrayreguler,
               ),
             ),
 
@@ -103,18 +100,12 @@ Widget _buildIconWithText(IconData icon, String label, String price) {
     padding: const EdgeInsets.only(right: 24),
     child: Row(
       children: [
-        Icon(icon, size: 30, color: Colors.white),
+        Icon(icon, size: 30, color: ColorsManager.white),
         const SizedBox(width: 8),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              label,
-              style: const TextStyle(
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
-            ),
+            Text(label, style: TextStyles.font16whitereguler),
             Text(price, style: const TextStyle(color: Colors.white)),
           ],
         ),
