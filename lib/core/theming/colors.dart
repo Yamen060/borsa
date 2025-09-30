@@ -12,4 +12,5 @@ class ColorsManager {
   static const Color lighmoregray = Color(0xFFF0F0F0);
   static const Color violetblue = Color(0xFF3A1F9C);
   static const Color mediumgray = Color(0xFF919191);
+  static const Color darkblue = Color(0xFF3044A1);
 }

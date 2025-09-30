@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:stock_market/features/home/home_screen.dart';
+import 'package:stock_market/features/home/ui/home_screen.dart';
 import 'package:stock_market/core/routing/app_router.dart'; // استورد ملف AppRouter
 
 void main() {

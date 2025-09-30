@@ -32,38 +32,52 @@ class _HomeMediumBarState extends State<HomeMediumBar> {
             ),
             SizedBox(width: 12.w),
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushNamed(Routes.Company_News);
+              },
               child: Text('Company News', style: TextStyles.font16BlackBold),
             ),
 
             SizedBox(width: 12.w),
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushNamed(Routes.Agenda_Home);
+              },
               child: Text('Agenda', style: TextStyles.font16BlackBold),
             ),
             SizedBox(width: 12.w),
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushNamed(Routes.Economy_Home);
+              },
               child: Text('Economy', style: TextStyles.font16BlackBold),
             ),
             SizedBox(width: 12.w),
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushNamed(Routes.Puplic_offering_Home);
+              },
               child: Text('Public Offering', style: TextStyles.font16BlackBold),
             ),
             SizedBox(width: 12.w),
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushNamed(Routes.Crypto_market_Home);
+              },
               child: Text('Crypto Market', style: TextStyles.font16BlackBold),
             ),
             SizedBox(width: 12.w),
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushNamed(Routes.Commodity_Home);
+              },
               child: Text('Commodity', style: TextStyles.font16BlackBold),
             ),
             SizedBox(width: 12.w),
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushNamed(Routes.Gallery_Home);
+              },
               child: Text('Gallery', style: TextStyles.font16BlackBold),
             ),
           ],

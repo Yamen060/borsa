@@ -3,17 +3,17 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stock_market/core/helpers/silver_home_medium_bar.dart';
 import 'package:stock_market/core/helpers/spacing.dart';
 import 'package:stock_market/core/theming/colors.dart';
-import 'package:stock_market/features/home/exchange_home/widget/exchange_wifi.dart';
+import 'package:stock_market/features/home/ui/Exchange_home/widget/Bar_wifi.dart';
+import 'package:stock_market/features/home/ui/Exchange_home/widget/home_top_bar.dart';
+import 'package:stock_market/features/home/ui/Exchange_home/widget/image_and_text.dart';
+import 'package:stock_market/features/home/ui/Exchange_home/widget/image_indicator.dart';
+import 'package:stock_market/features/home/ui/Exchange_home/widget/logos.dart';
+import 'package:stock_market/features/home/ui/Exchange_home/widget/most_read_news.dart';
+import 'package:stock_market/features/home/ui/Exchange_home/widget/show_more_button.dart';
 import 'package:stock_market/features/home/exchange_home/widget/home_medium_bar.dart';
-import 'package:stock_market/features/home/exchange_home/widget/home_top_bar.dart';
-import 'package:stock_market/features/home/exchange_home/widget/image_and_text.dart';
-import 'package:stock_market/features/home/exchange_home/widget/image_indicator.dart';
-import 'package:stock_market/features/home/exchange_home/widget/logos.dart';
-import 'package:stock_market/features/home/exchange_home/widget/most_read_news.dart';
-import 'package:stock_market/features/home/exchange_home/widget/show_more_button.dart';
 
-class Exchange extends StatelessWidget {
-  const Exchange({super.key});
+class CryptoMarketHome extends StatelessWidget {
+  const CryptoMarketHome({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +44,7 @@ class Exchange extends StatelessWidget {
             ),
 
             /// ✅ باقي المحتوى قابل للتمرير
-            SliverToBoxAdapter(child: ExchangWifi()),
+            SliverToBoxAdapter(child: BarWifi(title: 'Crypto Market',)),
             SliverToBoxAdapter(child: ImageIndicator()),
             SliverToBoxAdapter(child: ImageAndText()),
             SliverToBoxAdapter(child: verticalSpace(10)),
