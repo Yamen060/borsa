@@ -44,7 +44,7 @@ class Exchange extends StatelessWidget {
             ),
 
             /// ✅ باقي المحتوى قابل للتمرير
-            SliverToBoxAdapter(child: BarWifi(title: 'Exchange')),
+            SliverToBoxAdapter(child: BarWifi(title: 'Exchange',)),
             SliverToBoxAdapter(child: ImageIndicator()),
             SliverToBoxAdapter(child: ImageAndText()),
             SliverToBoxAdapter(child: verticalSpace(10)),
