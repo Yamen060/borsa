@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stock_market/core/widgets/full_screen.dart';
+import 'package:stock_market/core/widgets/home_with_medium_bar.dart';
 import 'package:stock_market/core/widgets/share_button.dart';
 import 'package:stock_market/core/widgets/silver_home_medium_bar.dart';
 import 'package:stock_market/core/helpers/spacing.dart';
@@ -54,14 +55,7 @@ class _NewsPageState extends State<NewsPage> {
                 ),
 
                 /// ✅ شريط متوسط ثابت
-                SliverPersistentHeader(
-                  pinned: true,
-                  delegate: SliverHeaderDelegate(
-                    minHeight: 60.h,
-                    maxHeight: 60.h,
-                    child: HomeMediumBar(),
-                  ),
-                ),
+             
                 SliverToBoxAdapter(child: verticalSpace(15)),
                 SliverToBoxAdapter(
                   child: Center(
@@ -228,7 +222,7 @@ class _NewsPageState extends State<NewsPage> {
                           width: 338.w,
 
                           child: Text(
-                            'At the ordinary general assembly meeting for 2024 held on September 26, 2025, Seyitler Kimya Sanayi A.Ş. (SEYKM) unanimously decided not to distribute dividends. The company reported that there was a net loss for the period in the financial statements prepared as a result of its activities in 2024 and therefore there was no distributable profit.According to the financial statements:Net loss for the period according to CMB: -34,572,513 TL Net loss for the period according to legal records: -10,075,222.68 TL Retained losses: TL 198,144,561.77 According to the companys statement, no dividend payments will be made in cash or bonus shares in line with these results The statement sent by the company to KAP is as follows:',
+                            'At the ordinary general assembly meeting for 2024 held on September 26, 2025, Seyitler Kimya Sanayi A.Ş. (SEYKM) unanimously decided not to distribute dividends.The company reported that there was a net loss for the period in the financial statements prepared as a result of its activities in 2024 and therefore there was no distributable profit.According to the financial statements:Net loss for the period according to CMB: -34,572,513 TL Net loss for the period according to legal records: -10,075,222.68 TL Retained losses: TL 198,144,561.77 According to the companys statement, no dividend payments will be made in cash or bonus shares in line with these results The statement sent by the company to KAP is as follows:',
                             style: TextStyles.font16BlackBold,
                           ),
                         ),

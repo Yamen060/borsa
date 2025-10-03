@@ -51,14 +51,14 @@ class AppDrawer extends StatelessWidget {
             _drawerItem(
               icon: Icons.home,
               title: 'Home page',
-              onTap: () => Navigator.of(context).pushNamed(Routes.Screen_Home),
+              onTap: () => Navigator.of(context).pushNamed(Routes.screenhome),
             ),
             _drawerItem(
               icon: Icons.folder,
               title: 'Categories',
               trailing: const Icon(Icons.arrow_forward_ios, size: 16),
               onTap: () =>
-                  Navigator.of(context).pushNamed(Routes.CategoriesScreen),
+                  Navigator.of(context).pushNamed(Routes.categoriesscreen),
             ),
             _drawerItem(
               icon: Icons.camera_alt,
@@ -68,17 +68,17 @@ class AppDrawer extends StatelessWidget {
             _drawerItem(
               icon: Icons.videocam,
               title: 'Video',
-              onTap: () => Navigator.of(context).pushNamed(Routes.Vedio),
+              onTap: () => Navigator.of(context).pushNamed(Routes.vedio),
             ),
             _drawerItem(
               icon: Icons.edit,
               title: 'Authors',
-              onTap: () => Navigator.of(context).pushNamed(Routes.Authors),
+              onTap: () => Navigator.of(context).pushNamed(Routes.authors),
             ),
             _drawerItem(
               icon: Icons.poll,
               title: 'Polls',
-              onTap: () => Navigator.of(context).pushNamed(Routes.Polls),
+              onTap: () => Navigator.of(context).pushNamed(Routes.polls),
             ),
             _drawerItem(
               icon: Icons.contact_page,
@@ -89,7 +89,7 @@ class AppDrawer extends StatelessWidget {
               icon: Icons.email,
               title: 'Communication',
               onTap: () =>
-                  Navigator.of(context).pushNamed(Routes.Communication),
+                  Navigator.of(context).pushNamed(Routes.communication),
             ),
 
             SizedBox(height: 10.h),

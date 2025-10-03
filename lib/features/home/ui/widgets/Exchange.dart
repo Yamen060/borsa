@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:stock_market/core/widgets/home_with_medium_bar.dart';
 import 'package:stock_market/core/widgets/silver_home_medium_bar.dart';
 import 'package:stock_market/core/helpers/spacing.dart';
 import 'package:stock_market/core/theming/colors.dart';
@@ -55,7 +56,7 @@ class _ExchangeState extends State<Exchange> {
                 delegate: SliverHeaderDelegate(
                   minHeight: 60.h,
                   maxHeight: 60.h,
-                  child: HomeMediumBar(),
+                  child: HomeWithMediumBar(),
                 ),
               ),
           

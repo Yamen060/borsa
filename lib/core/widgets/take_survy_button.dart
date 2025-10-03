@@ -7,6 +7,7 @@ import 'package:stock_market/core/widgets/app_drawer.dart';
 import 'package:stock_market/core/widgets/class_bar_green.dart';
 import 'package:stock_market/core/widgets/home_medium_bar.dart';
 import 'package:stock_market/core/widgets/home_top_bar.dart';
+import 'package:stock_market/core/widgets/home_with_medium_bar.dart';
 import 'package:stock_market/core/widgets/polloption.dart';
 import 'package:stock_market/core/widgets/scroll_top_button.dart';
 import 'package:stock_market/core/widgets/share_button.dart';
@@ -74,16 +75,13 @@ class _TakeSurvyButtonState extends State<TakeSurvyButton> {
                   collapsedHeight: 60,
                 ),
 
-                /// ✅ شريط متوسط ثابت
-                SliverPersistentHeader(
-                  pinned: true,
-                  delegate: SliverHeaderDelegate(
-                    minHeight: 60.h,
-                    maxHeight: 60.h,
-                    child: HomeMediumBar(),
+             
+                SliverToBoxAdapter(
+                  child: ClassBarGreen(
+                    title: 'Poll',
+                    icon: Icons.account_box_outlined,
                   ),
                 ),
-                SliverToBoxAdapter(child: ClassBarGreen(title: 'Poll', icon: Icons.account_box_outlined,)),
                 SliverToBoxAdapter(child: verticalSpace(20)),
                 SliverToBoxAdapter(
                   child: Padding(
@@ -156,7 +154,7 @@ class _TakeSurvyButtonState extends State<TakeSurvyButton> {
                                   'There were a total of 12717 participants in this\nsurvey',
                                 ),
                                 verticalSpace(10),
-                               ShareButton(),
+                                ShareButton(),
                               ],
                             ),
                           verticalSpace(100),

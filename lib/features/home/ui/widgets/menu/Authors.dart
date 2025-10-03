@@ -7,6 +7,7 @@ import 'package:stock_market/core/widgets/auther_information.dart';
 import 'package:stock_market/core/widgets/class_bar_green.dart';
 import 'package:stock_market/core/widgets/home_medium_bar.dart';
 import 'package:stock_market/core/widgets/home_top_bar.dart';
+import 'package:stock_market/core/widgets/home_with_medium_bar.dart';
 import 'package:stock_market/core/widgets/logos.dart';
 import 'package:stock_market/core/widgets/silver_home_medium_bar.dart';
 
@@ -35,14 +36,7 @@ class Authors extends StatelessWidget {
                 ),
 
                 /// ✅ شريط متوسط ثابت
-                SliverPersistentHeader(
-                  pinned: true,
-                  delegate: SliverHeaderDelegate(
-                    minHeight: 60.h,
-                    maxHeight: 60.h,
-                    child: HomeMediumBar(),
-                  ),
-                ),
+             
                 SliverToBoxAdapter(child: ClassBarGreen(title: 'Authors',icon: Icons.edit)),
                 SliverToBoxAdapter(child: AuthorsWidget()),
                 SliverToBoxAdapter(child: verticalSpace(15)),

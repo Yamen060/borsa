@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:stock_market/core/helpers/extension.dart';
 import 'package:stock_market/core/helpers/spacing.dart';
+import 'package:stock_market/core/routing/routes.dart';
 import 'package:stock_market/core/theming/colors.dart';
 import 'package:stock_market/core/theming/styles.dart';
 
@@ -75,8 +77,7 @@ class CategoriesScreen extends StatelessWidget {
                   _buildCategoryItem(
                     context,
                     title: 'Economy',
-                    onTap: () =>
-                        Navigator.of(context).pushNamed('/Economy_Home'),
+                    onTap: () => context.pushNamed(Routes.economyhome),
                     iconData: Icons.money,
                   ),
                   verticalSpace(8),

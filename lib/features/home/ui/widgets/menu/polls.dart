@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stock_market/core/widgets/class_bar_green.dart';
+import 'package:stock_market/core/widgets/home_with_medium_bar.dart';
 import 'package:stock_market/core/widgets/silver_home_medium_bar.dart';
 import 'package:stock_market/core/routing/routes.dart';
 import 'package:stock_market/core/theming/colors.dart';
@@ -36,14 +37,7 @@ class Polls extends StatelessWidget {
                 ),
 
                 /// ✅ شريط متوسط ثابت
-                SliverPersistentHeader(
-                  pinned: true,
-                  delegate: SliverHeaderDelegate(
-                    minHeight: 60.h,
-                    maxHeight: 60.h,
-                    child: HomeMediumBar(),
-                  ),
-                ),
+             
                 SliverToBoxAdapter(
                   child: ClassBarGreen(title: 'Poll',icon: Icons.account_box_outlined),),
 
@@ -75,7 +69,7 @@ class Polls extends StatelessWidget {
                             onPressed: () {
                               Navigator.of(
                                 context,
-                              ).pushNamed(Routes.TakeSurvyButton);
+                              ).pushNamed(Routes.takesurvybutton);
                             },
                             child: Text(
                               'Take the Survy',

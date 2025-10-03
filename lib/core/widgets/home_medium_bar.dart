@@ -1,93 +1,47 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:stock_market/core/routing/routes.dart'; // تأكد من استيراد ملف routes.dart الخاص بك
 import 'package:stock_market/core/theming/colors.dart';
 import 'package:stock_market/core/theming/styles.dart';
 
-class HomeMediumBar extends StatefulWidget {
-  const HomeMediumBar({super.key});
+class HomeMediumBar extends StatelessWidget {
+  final Function(int)? onTabSelected;
 
-  @override
-  State<HomeMediumBar> createState() => _HomeMediumBarState();
-}
+  HomeMediumBar({Key? key, this.onTabSelected}) : super(key: key);
 
-class _HomeMediumBarState extends State<HomeMediumBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(color: ColorsManager.lightgray),
       height: 62.h,
-      padding: const EdgeInsets.only(top: 11, bottom: 11),
+      color: ColorsManager.lightgray,
+      padding: const EdgeInsets.symmetric(vertical: 10),
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            TextButton(
-              onPressed: () {
-                // استخدام pushReplacementNamed
-                Navigator.of(context).pushReplacementNamed(Routes.Exchange);
-              },
-              child: Text('Exchange', style: TextStyles.font16BlackBold),
+          children: List.generate(
+            8,
+            (index) => Padding(
+              padding: EdgeInsets.only(right: 12.w),
+              child: TextButton(
+                onPressed: () {
+                  if (onTabSelected != null) onTabSelected!(index);
+                },
+                child: Text(_titles[index], style: TextStyles.font16BlackBold),
+              ),
             ),
-            SizedBox(width: 12.w),
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pushReplacementNamed(Routes.Company_News);
-              },
-              child: Text('Company News', style: TextStyles.font16BlackBold),
-            ),
-            SizedBox(width: 12.w),
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pushReplacementNamed(Routes.Agenda_Home);
-              },
-              child: Text('Agenda', style: TextStyles.font16BlackBold),
-            ),
-            SizedBox(width: 12.w),
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pushReplacementNamed(Routes.Economy_Home);
-              },
-              child: Text('Economy', style: TextStyles.font16BlackBold),
-            ),
-            SizedBox(width: 12.w),
-            TextButton(
-              onPressed: () {
-                Navigator.of(
-                  context,
-                ).pushReplacementNamed(Routes.Puplic_offering_Home);
-              },
-              child: Text('Public Offering', style: TextStyles.font16BlackBold),
-            ),
-            SizedBox(width: 12.w),
-            TextButton(
-              onPressed: () {
-                Navigator.of(
-                  context,
-                ).pushReplacementNamed(Routes.Crypto_market_Home);
-              },
-              child: Text('Crypto Market', style: TextStyles.font16BlackBold),
-            ),
-            SizedBox(width: 12.w),
-            TextButton(
-              onPressed: () {
-                Navigator.of(
-                  context,
-                ).pushReplacementNamed(Routes.Commodity_Home);
-              },
-              child: Text('Commodity', style: TextStyles.font16BlackBold),
-            ),
-            SizedBox(width: 12.w),
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pushReplacementNamed(Routes.Gallery_Home);
-              },
-              child: Text('Gallery', style: TextStyles.font16BlackBold),
-            ),
-          ],
+          ),
         ),
       ),
     );
   }
+
+  final List<String> _titles = [
+    'Exchange',
+    'Company News',
+    'Agenda',
+    'Economy',
+    'Public Offering',
+    'Crypto Market',
+    'Commodity',
+    'Gallery',
+  ];
 }

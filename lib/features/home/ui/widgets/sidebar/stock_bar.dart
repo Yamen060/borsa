@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:stock_market/core/theming/colors.dart';
 import 'package:stock_market/core/theming/styles.dart';
+import 'package:stock_market/core/widgets/follow_button.dart';
 
 class StockBar extends StatefulWidget {
   const StockBar({super.key});
@@ -84,25 +85,27 @@ class _StockBarState extends State<StockBar> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(6.0),
-      child: Container(
-        width: 369.w,
-        height: 168.h,
-        margin: EdgeInsets.all(10.w),
-        color: ColorsManager.white,
-        child: ListView.builder(
-          controller: _scrollController,
-          scrollDirection: Axis.horizontal,
-          physics:
-              const NeverScrollableScrollPhysics(), // عشان المستخدم ما يوقف التمرير باللمس
-          itemCount: tickerItems.length * 1000, // تكرار عشان يحس أنه لا نهائي
-          itemBuilder: (context, index) {
-            final item = tickerItems[index % tickerItems.length];
-            return _buildTickerItem(item);
-          },
+    return Stack(
+      children: [
+        Container(
+          width: 369.w,
+          height: 168.h,
+          margin: EdgeInsets.all(10.w),
+          color: ColorsManager.white,
+          child: ListView.builder(
+            controller: _scrollController,
+            scrollDirection: Axis.horizontal,
+            physics:
+                const NeverScrollableScrollPhysics(), // عشان المستخدم ما يوقف التمرير باللمس
+            itemCount: tickerItems.length * 1000, // تكرار عشان يحس أنه لا نهائي
+            itemBuilder: (context, index) {
+              final item = tickerItems[index % tickerItems.length];
+              return _buildTickerItem(item);
+            },
+          ),
         ),
-      ),
+        FollowButton(),
+      ],
     );
   }
 }

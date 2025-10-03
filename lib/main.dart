@@ -19,7 +19,6 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           initialRoute: '/',
           onGenerateRoute: AppRouter().generateRoute,
-          home: const HomeScreen(),
         );
       },
     );

@@ -10,6 +10,7 @@ class ColorsManager {
   static const Color brightred = Color(0xFFF02962);
   static const Color lightred = Color(0xFFFF0810);
   static const Color darkorange = Color(0xFFF02926);
+   static const Color verydarkblue = Color(0xFF0D118A);
     static const Color violetblue = Color(0xFF3A1F9C);
   static const Color darkblue = Color(0xFF3044A1);
   static const Color blue = Color(0xff1474F1);

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:stock_market/core/widgets/home_with_medium_bar.dart';
 import 'package:stock_market/core/widgets/silver_home_medium_bar.dart';
 import 'package:stock_market/core/helpers/spacing.dart';
 import 'package:stock_market/core/theming/colors.dart';
@@ -53,14 +54,7 @@ class _EconomyHomeState extends State<EconomyHome> {
                 ),
 
                 /// ✅ شريط متوسط ثابت
-                SliverPersistentHeader(
-                  pinned: true,
-                  delegate: SliverHeaderDelegate(
-                    minHeight: 60.h,
-                    maxHeight: 60.h,
-                    child: HomeMediumBar(),
-                  ),
-                ),
+             
 
                 /// ✅ باقي المحتوى قابل للتمرير
                 SliverToBoxAdapter(child: BarWifi(title: 'Economy')),

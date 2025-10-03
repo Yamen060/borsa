@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:stock_market/core/routing/routes.dart';
+import 'package:stock_market/core/widgets/home_with_medium_bar.dart';
 import 'package:stock_market/core/widgets/take_survy_button.dart';
 import 'package:stock_market/features/home/ui/widgets/menu/video.dart';
 import 'package:stock_market/features/home/ui/widgets/Agenda_home.dart';
@@ -21,69 +23,67 @@ import 'package:stock_market/core/widgets/search.dart';
 
 class AppRouter {
   Route? generateRoute(RouteSettings settings) {
-    Widget page;
-
     switch (settings.name) {
       case '/':
-        page = const HomeScreen();
-        break;
-      case '/Exchange':
-        page = const Exchange();
-        break;
-      case '/Company_News':
-        page = const CompanyNews();
-        break;
-      case '/Agenda_Home':
-        page = const AgendaHome();
-        break;
-      case '/Economy_Home':
-        page = const EconomyHome();
-        break;
-      case '/Puplic_offering_Home':
-        page = const PuplicOfferingHome();
-        break;
-      case '/Crypto_market_Home':
-        page = const CryptoMarketHome();
-        break;
-      case '/Commodity_Home':
-        page = const CommodityHome();
-        break;
-      case '/Gallery_Home':
-        page = const GalleryHome();
-        break;
-      case '/Screen_Home':
-        page = const HomeScreen();
-        break;
-      case '/search':
-        page = Search();
-        break;
-      case '/CategoriesScreen':
-        page = CategoriesScreen();
-        break;
-      case '/AboutUs':
-        page = AboutUs();
-        break;
-      case '/PrivacyPolicy':
-        page = PrivacyPolicy();
-        break;
-      case '/Polls':
-        page = Polls();
-        break;
-        case '/Communication':
-        page = Communication();
-        break;
-        case '/NewsPage':
-        page = NewsPage();
-        break;
-        case '/Authors':
-        page = Authors();
-        break;
-        case '/TakeSurvyButton':
-        page = TakeSurvyButton();
-        break;
-         case '/Vedio':
-        page = Video();
-        break;
+        return MaterialPageRoute(builder: (context) => HomeScreen());
+
+      case Routes.exchange:
+        return MaterialPageRoute(builder: (context) => Exchange());
+
+      case Routes.companynews:
+        return MaterialPageRoute(builder: (context) => CompanyNews());
+
+      case Routes.agendahome:
+        return MaterialPageRoute(builder: (context) => AgendaHome());
+
+      case Routes.economyhome:
+        return MaterialPageRoute(builder: (context) => EconomyHome());
+
+      case Routes.puplicofferinghome:
+        return MaterialPageRoute(builder: (context) => PuplicOfferingHome());
+
+      case Routes.cryptomarkethome:
+        return MaterialPageRoute(builder: (context) => CryptoMarketHome());
+
+      case Routes.commodityhome:
+        return MaterialPageRoute(builder: (context) => CommodityHome());
+
+      case Routes.galleryhome:
+        return MaterialPageRoute(builder: (context) => GalleryHome());
+
+      case Routes.screenhome:
+        return MaterialPageRoute(builder: (context) => HomeScreen());
+
+      case Routes.search:
+        return MaterialPageRoute(builder: (context) => Search());
+
+      case Routes.categoriesscreen:
+        return MaterialPageRoute(builder: (context) => CategoriesScreen());
+
+      case Routes.aboutUs:
+        return MaterialPageRoute(builder: (context) => AboutUs());
+
+      case Routes.privacypolicy:
+        return MaterialPageRoute(builder: (context) => PrivacyPolicy());
+
+      case Routes.polls:
+        return MaterialPageRoute(builder: (context) => Polls());
+
+      case Routes.communication:
+        return MaterialPageRoute(builder: (context) => Communication());
+
+      case Routes.newspage:
+        return MaterialPageRoute(builder: (context) => NewsPage());
+
+      case Routes.authors:
+        return MaterialPageRoute(builder: (context) => Authors());
+
+      case Routes.takesurvybutton:
+        return MaterialPageRoute(builder: (context) => TakeSurvyButton());
+
+      case Routes.vedio:
+        return MaterialPageRoute(builder: (context) => Video());
+
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(
@@ -91,11 +91,5 @@ class AppRouter {
           ),
         );
     }
-
-    return PageRouteBuilder(
-      pageBuilder: (context, animation, secondaryAnimation) => page,
-      transitionDuration: Duration.zero, // يجعل الانتقال فوريًا
-      reverseTransitionDuration: Duration.zero, // يجعل العودة فورية أيضًا
-    );
   }
 }
