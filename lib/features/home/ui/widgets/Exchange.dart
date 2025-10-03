@@ -1,37 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:stock_market/core/helpers/silver_home_medium_bar.dart';
+import 'package:stock_market/core/widgets/silver_home_medium_bar.dart';
 import 'package:stock_market/core/helpers/spacing.dart';
 import 'package:stock_market/core/theming/colors.dart';
 import 'package:stock_market/core/widgets/scroll_top_button.dart';
-import 'package:stock_market/features/home/ui/Exchange_home/widget/Bar_wifi.dart';
-import 'package:stock_market/features/home/ui/Exchange_home/widget/home_medium_bar.dart';
-import 'package:stock_market/features/home/ui/Exchange_home/widget/home_top_bar.dart';
-import 'package:stock_market/features/home/ui/Exchange_home/widget/image_and_text.dart';
-import 'package:stock_market/features/home/ui/Exchange_home/widget/image_indicator.dart';
-import 'package:stock_market/features/home/ui/Exchange_home/widget/logos.dart';
-import 'package:stock_market/features/home/ui/Exchange_home/widget/most_read_news.dart';
-import 'package:stock_market/features/home/ui/Exchange_home/widget/show_more_button.dart';
-import 'package:stock_market/features/home/ui/widgets/app_drawer.dart';
+import 'package:stock_market/core/widgets/Bar_wifi.dart';
+import 'package:stock_market/core/widgets/home_medium_bar.dart';
+import 'package:stock_market/core/widgets/home_top_bar.dart';
+import 'package:stock_market/core/widgets/image_and_text.dart';
+import 'package:stock_market/core/widgets/image_indicator.dart';
+import 'package:stock_market/core/widgets/logos.dart';
+import 'package:stock_market/core/widgets/most_read_news.dart';
+import 'package:stock_market/core/widgets/show_more_button.dart';
+import 'package:stock_market/core/widgets/app_drawer.dart';
 
-
-class CommodityHome extends StatefulWidget {
-  const CommodityHome({super.key});
+class Exchange extends StatefulWidget {
+  const Exchange({super.key});
 
   @override
-  State<CommodityHome> createState() => _CommodityHomeState();
+  State<Exchange> createState() => _ExchangeState();
 }
 
-class _CommodityHomeState extends State<CommodityHome> {
+class _ExchangeState extends State<Exchange> {
     final ScrollController _scrollController = ScrollController();
-      @override
+  @override
   void dispose() {
     _scrollController.dispose();
     super.dispose();
   }
   @override
   Widget build(BuildContext context) {
-     return Scaffold(
+    return Scaffold(
       drawer: const AppDrawer(),
       backgroundColor: ColorsManager.lightgray,
       body: SafeArea(
@@ -61,7 +60,7 @@ class _CommodityHomeState extends State<CommodityHome> {
               ),
           
               /// ✅ باقي المحتوى قابل للتمرير
-              SliverToBoxAdapter(child: BarWifi(title: 'Commodity',)),
+              SliverToBoxAdapter(child: BarWifi(title: 'Exchange',)),
               SliverToBoxAdapter(child: ImageIndicator()),
               SliverToBoxAdapter(child: ImageAndText()),
               SliverToBoxAdapter(child: verticalSpace(10)),
@@ -73,9 +72,9 @@ class _CommodityHomeState extends State<CommodityHome> {
             ],
           ),
           
-
            ScrollToTopButton(scrollController: _scrollController),
          
+          
           ]
         ),
       ),

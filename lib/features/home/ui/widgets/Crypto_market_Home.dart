@@ -1,30 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:stock_market/core/helpers/silver_home_medium_bar.dart';
+import 'package:stock_market/core/widgets/silver_home_medium_bar.dart';
 import 'package:stock_market/core/helpers/spacing.dart';
 import 'package:stock_market/core/theming/colors.dart';
 import 'package:stock_market/core/widgets/scroll_top_button.dart';
-import 'package:stock_market/features/home/ui/Exchange_home/widget/Bar_wifi.dart';
-import 'package:stock_market/features/home/ui/Exchange_home/widget/home_medium_bar.dart';
-import 'package:stock_market/features/home/ui/Exchange_home/widget/home_top_bar.dart';
-import 'package:stock_market/features/home/ui/Exchange_home/widget/image_and_text.dart';
-import 'package:stock_market/features/home/ui/Exchange_home/widget/image_indicator.dart';
-import 'package:stock_market/features/home/ui/Exchange_home/widget/logos.dart';
-import 'package:stock_market/features/home/ui/Exchange_home/widget/most_read_news.dart';
-import 'package:stock_market/features/home/ui/Exchange_home/widget/show_more_button.dart';
-import 'package:stock_market/features/home/ui/widgets/app_drawer.dart';
+import 'package:stock_market/core/widgets/Bar_wifi.dart';
+import 'package:stock_market/core/widgets/home_medium_bar.dart';
+import 'package:stock_market/core/widgets/home_top_bar.dart';
+import 'package:stock_market/core/widgets/image_and_text.dart';
+import 'package:stock_market/core/widgets/image_indicator.dart';
+import 'package:stock_market/core/widgets/logos.dart';
+import 'package:stock_market/core/widgets/most_read_news.dart';
+import 'package:stock_market/core/widgets/show_more_button.dart';
+import 'package:stock_market/core/widgets/app_drawer.dart';
 
-class CompanyNews extends StatefulWidget {
-  const CompanyNews({super.key});
+class CryptoMarketHome extends StatefulWidget {
+  const CryptoMarketHome({super.key});
 
   @override
-  State<CompanyNews> createState() => _CompanyNewsState();
+  State<CryptoMarketHome> createState() => _CryptoMarketHomeState();
 }
 
-class _CompanyNewsState extends State<CompanyNews> {
-    final ScrollController _scrollController = ScrollController();
-  @override
+class _CryptoMarketHomeState extends State<CryptoMarketHome> {
+  final ScrollController _scrollController = ScrollController();
+    @override
   void dispose() {
     _scrollController.dispose();
     super.dispose();
@@ -35,7 +34,7 @@ class _CompanyNewsState extends State<CompanyNews> {
       drawer: const AppDrawer(),
       backgroundColor: ColorsManager.lightgray,
       body: SafeArea(
-        child: Stack(
+        child:  Stack(
           children: [CustomScrollView(
             controller: _scrollController,
             slivers: [
@@ -61,7 +60,7 @@ class _CompanyNewsState extends State<CompanyNews> {
               ),
           
               /// ✅ باقي المحتوى قابل للتمرير
-              SliverToBoxAdapter(child: BarWifi(title: 'Company News')),
+              SliverToBoxAdapter(child: BarWifi(title: 'Crypto Market',)),
               SliverToBoxAdapter(child: ImageIndicator()),
               SliverToBoxAdapter(child: ImageAndText()),
               SliverToBoxAdapter(child: verticalSpace(10)),
@@ -73,8 +72,11 @@ class _CompanyNewsState extends State<CompanyNews> {
             ],
           ),
           
+          
+          
            ScrollToTopButton(scrollController: _scrollController),
-         
+          
+          
           ]
         ),
       ),

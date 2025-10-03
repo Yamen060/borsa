@@ -43,9 +43,9 @@ class ImageAndText extends StatelessWidget {
                     height: 110.h,
                     fit: BoxFit.cover,
                   ),
-                  SizedBox(height: 6.h),
+
                   Text('EXCHANGE', style: TextStyles.font14lightredBold),
-                  SizedBox(height: 4.h),
+
                   Text(
                     'New York\nThe stock market\nrenaued positive',
                     style: TextStyles.font11darkbold,

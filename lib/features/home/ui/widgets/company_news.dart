@@ -1,119 +1,82 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:stock_market/core/widgets/silver_home_medium_bar.dart';
+import 'package:stock_market/core/helpers/spacing.dart';
 import 'package:stock_market/core/theming/colors.dart';
-import 'package:stock_market/core/theming/styles.dart';
+import 'package:stock_market/core/widgets/scroll_top_button.dart';
+import 'package:stock_market/core/widgets/Bar_wifi.dart';
+import 'package:stock_market/core/widgets/home_medium_bar.dart';
+import 'package:stock_market/core/widgets/home_top_bar.dart';
+import 'package:stock_market/core/widgets/image_and_text.dart';
+import 'package:stock_market/core/widgets/image_indicator.dart';
+import 'package:stock_market/core/widgets/logos.dart';
+import 'package:stock_market/core/widgets/most_read_news.dart';
+import 'package:stock_market/core/widgets/show_more_button.dart';
+import 'package:stock_market/core/widgets/app_drawer.dart';
 
 class CompanyNews extends StatefulWidget {
   const CompanyNews({super.key});
 
   @override
-  State<CompanyNews> createState() => _CompanyNewsCardState();
+  State<CompanyNews> createState() => _CompanyNewsState();
 }
 
-class _CompanyNewsCardState extends State<CompanyNews> {
-  int _currentIndex = 0;
-
-  final List<Map<String, String>> newsItems = [
-    {
-      'image': 'assets/images/company_news.png',
-      'title': 'User traffic peaks in mackolik apps',
-    },
-    {
-      'image': 'assets/images/live_news.png',
-      'title': 'New feature launched successfully',
-    },
-    {
-      'image': 'assets/images/company_news.png',
-      'title': 'Partnership with major companies',
-    },
-  ];
-
-  void _nextNews() {
-    setState(() {
-      _currentIndex = (_currentIndex + 1) % newsItems.length;
-    });
+class _CompanyNewsState extends State<CompanyNews> {
+    final ScrollController _scrollController = ScrollController();
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
   }
-
-  void _prevNews() {
-    setState(() {
-      _currentIndex = (_currentIndex - 1 + newsItems.length) % newsItems.length;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.all(10),
-      width: 370.w,
-      height: 288.h,
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: ColorsManager.white,
-        borderRadius: BorderRadius.circular(12),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          // Header Row: Title + Line + Arrows
-          Row(
-            children: [
-              Text('Company News', style: TextStyles.font16violetdBold),
-              const SizedBox(width: 8),
-              Expanded(
-                child: Container(
-                  height: 2.h,
-                  width: 99.w,
-                  color: ColorsManager.violetblue,
+    return Scaffold(
+      drawer: const AppDrawer(),
+      backgroundColor: ColorsManager.lightgray,
+      body: SafeArea(
+        child: Stack(
+          children: [CustomScrollView(
+            controller: _scrollController,
+            slivers: [
+              /// ✅ شريط علوي ثابت
+              SliverAppBar(
+                pinned: true,
+                automaticallyImplyLeading: false,
+                backgroundColor: Colors.white,
+                elevation: 0,
+                flexibleSpace: const HomeTopBar(),
+                expandedHeight: 60.h, // حسب ارتفاع HomeTopBar
+                collapsedHeight: 60.h,
+              ),
+          
+              /// ✅ شريط متوسط ثابت
+              SliverPersistentHeader(
+                pinned: true,
+                delegate: SliverHeaderDelegate(
+                  minHeight: 60.h,
+                  maxHeight: 60.h,
+                  child: HomeMediumBar(),
                 ),
               ),
-              const SizedBox(width: 8),
-              Row(
-                children: [
-                  _arrowButton(Icons.chevron_left, _prevNews),
-                  const SizedBox(width: 4),
-                  _arrowButton(Icons.chevron_right, _nextNews),
-                ],
-              ),
+          
+              /// ✅ باقي المحتوى قابل للتمرير
+              SliverToBoxAdapter(child: BarWifi(title: 'Company News')),
+              SliverToBoxAdapter(child: ImageIndicator()),
+              SliverToBoxAdapter(child: ImageAndText()),
+              SliverToBoxAdapter(child: verticalSpace(10)),
+              SliverToBoxAdapter(child: ShowMoreButton()),
+              SliverToBoxAdapter(child: verticalSpace(10)),
+              SliverToBoxAdapter(child: MostReadNews()),
+              SliverToBoxAdapter(child: verticalSpace(10)),
+              SliverToBoxAdapter(child: Logos()),
             ],
           ),
-
-          const SizedBox(height: 16),
-
-          // Image
-          ClipRRect(
-            borderRadius: BorderRadius.circular(8),
-            child: Image.asset(
-              newsItems[_currentIndex]['image']!,
-              height: 172.h,
-              width: 307.w,
-            ),
-          ),
-
-          const SizedBox(height: 12),
-
-          // Text Under Image
-          Text(
-            newsItems[_currentIndex]['title']!,
-            style: TextStyles.font15BlackBold,
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _arrowButton(IconData icon, VoidCallback onPressed) {
-    return Container(
-      width: 32,
-      height: 32,
-      decoration: BoxDecoration(
-        color: ColorsManager.darkorange,
-        borderRadius: BorderRadius.circular(6),
-      ),
-      child: IconButton(
-        padding: EdgeInsets.zero,
-        icon: Icon(icon, color: Colors.white, size: 20),
-        onPressed: onPressed,
+          
+           ScrollToTopButton(scrollController: _scrollController),
+         
+          ]
+        ),
       ),
     );
   }

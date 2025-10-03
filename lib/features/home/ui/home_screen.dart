@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:stock_market/core/helpers/silver_home_medium_bar.dart';
+import 'package:stock_market/core/widgets/silver_home_medium_bar.dart';
 import 'package:stock_market/core/helpers/spacing.dart';
+import 'package:stock_market/core/theming/colors.dart';
 import 'package:stock_market/core/widgets/scroll_top_button.dart';
-import 'package:stock_market/features/home/ui/Exchange_home/widget/home_medium_bar.dart';
-import 'package:stock_market/features/home/ui/Exchange_home/widget/home_top_bar.dart';
-import 'package:stock_market/features/home/ui/Exchange_home/widget/image_indicator.dart';
-import 'package:stock_market/features/home/ui/Exchange_home/widget/logos.dart';
-import 'package:stock_market/features/home/ui/Exchange_home/widget/most_read_news.dart';
-import 'package:stock_market/features/home/ui/widgets/app_drawer.dart';
+import 'package:stock_market/core/widgets/home_medium_bar.dart';
+import 'package:stock_market/core/widgets/home_top_bar.dart';
+import 'package:stock_market/core/widgets/image_indicator.dart';
+import 'package:stock_market/core/widgets/logos.dart';
+import 'package:stock_market/core/widgets/most_read_news.dart';
+import 'package:stock_market/core/widgets/app_drawer.dart';
 import 'package:stock_market/features/home/ui/widgets/auther_card.dart';
-import 'package:stock_market/features/home/ui/widgets/company_news.dart';
-import 'package:stock_market/features/home/ui/widgets/company_news_picture.dart';
-import 'package:stock_market/features/home/ui/widgets/stock_bar.dart';
+import 'package:stock_market/core/widgets/company_news_class.dart';
+import 'package:stock_market/core/widgets/company_news_picture.dart';
+import 'package:stock_market/features/home/ui/widgets/sidebar/stock_bar.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -34,7 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: const AppDrawer(),
-      backgroundColor: const Color(0xffE9DBDB),
+      backgroundColor: ColorsManager.whiteback,
       body: SafeArea(
         child: Stack(
           children: [
@@ -73,13 +74,13 @@ class _HomeScreenState extends State<HomeScreen> {
                     height: 128.h,
                   ),
                 ),
-                SliverToBoxAdapter(child: CompanyNews()),
+                SliverToBoxAdapter(child: CompanyNewsClass()),
                 SliverToBoxAdapter(child: verticalSpace(10)),
                 SliverToBoxAdapter(child: AuthorCard()),
                 SliverToBoxAdapter(child: verticalSpace(10)),
-                SliverToBoxAdapter(child: CompanyNews()),
+                SliverToBoxAdapter(child: CompanyNewsClass()),
                 SliverToBoxAdapter(child: verticalSpace(10)),
-                SliverToBoxAdapter(child: CompanyNews()),
+                SliverToBoxAdapter(child: CompanyNewsClass()),
                 SliverToBoxAdapter(child: verticalSpace(10)),
                 SliverToBoxAdapter(child: CompanyNewsPicture()),
                 SliverToBoxAdapter(child: CompanyNewsPicture()),

@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:stock_market/core/helpers/silver_home_medium_bar.dart';
+import 'package:stock_market/core/widgets/silver_home_medium_bar.dart';
 import 'package:stock_market/core/helpers/spacing.dart';
 import 'package:stock_market/core/theming/colors.dart';
 import 'package:stock_market/core/widgets/scroll_top_button.dart';
-import 'package:stock_market/features/home/ui/Economy_home/widget/bar_country_and_weather.dart';
-import 'package:stock_market/features/home/ui/Exchange_home/widget/Bar_wifi.dart';
-import 'package:stock_market/features/home/ui/Exchange_home/widget/home_medium_bar.dart';
-import 'package:stock_market/features/home/ui/Exchange_home/widget/home_top_bar.dart';
-import 'package:stock_market/features/home/ui/Exchange_home/widget/image_and_text.dart';
-import 'package:stock_market/features/home/ui/Exchange_home/widget/image_indicator.dart';
-import 'package:stock_market/features/home/ui/Exchange_home/widget/logos.dart';
-import 'package:stock_market/features/home/ui/Exchange_home/widget/most_read_news.dart';
-import 'package:stock_market/features/home/ui/Exchange_home/widget/show_more_button.dart';
-import 'package:stock_market/features/home/ui/widgets/app_drawer.dart';
+import 'package:stock_market/features/home/ui/widgets/sidebar/bar_country_and_weather.dart';
+import 'package:stock_market/core/widgets/Bar_wifi.dart';
+import 'package:stock_market/core/widgets/home_medium_bar.dart';
+import 'package:stock_market/core/widgets/home_top_bar.dart';
+import 'package:stock_market/core/widgets/image_and_text.dart';
+import 'package:stock_market/core/widgets/image_indicator.dart';
+import 'package:stock_market/core/widgets/logos.dart';
+import 'package:stock_market/core/widgets/most_read_news.dart';
+import 'package:stock_market/core/widgets/show_more_button.dart';
+import 'package:stock_market/core/widgets/app_drawer.dart';
 
 class EconomyHome extends StatefulWidget {
   const EconomyHome({super.key});
