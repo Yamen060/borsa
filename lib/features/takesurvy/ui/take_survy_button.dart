@@ -7,7 +7,7 @@ import 'package:stock_market/core/widgets/app_drawer.dart';
 import 'package:stock_market/core/widgets/class_bar_green.dart';
 import 'package:stock_market/core/widgets/home_medium_bar.dart';
 import 'package:stock_market/core/widgets/home_top_bar.dart';
-import 'package:stock_market/core/widgets/polloption.dart';
+import 'package:stock_market/features/takesurvy/ui/widgets/polloption.dart';
 import 'package:stock_market/core/widgets/scroll_top_button.dart';
 import 'package:stock_market/core/widgets/share_button.dart';
 import 'package:stock_market/core/widgets/silver_home_medium_bar.dart';

@@ -4,7 +4,7 @@ import 'package:stock_market/core/widgets/silver_home_medium_bar.dart';
 import 'package:stock_market/core/helpers/spacing.dart';
 import 'package:stock_market/core/theming/colors.dart';
 import 'package:stock_market/core/widgets/scroll_top_button.dart';
-import 'package:stock_market/features/home/ui/widgets/sidebar/bar_country_and_weather.dart';
+import 'package:stock_market/features/economy/ui/widgets/bar_country_and_weather.dart';
 import 'package:stock_market/core/widgets/Bar_wifi.dart';
 import 'package:stock_market/core/widgets/home_medium_bar.dart';
 import 'package:stock_market/core/widgets/home_top_bar.dart';

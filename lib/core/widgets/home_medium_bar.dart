@@ -26,28 +26,28 @@ class _HomeMediumBarState extends State<HomeMediumBar> {
             TextButton(
               onPressed: () {
                 // استخدام pushReplacementNamed
-                Navigator.of(context).pushReplacementNamed(Routes.Exchange);
+                Navigator.of(context).pushReplacementNamed(Routes.exchange);
               },
               child: Text('Exchange', style: TextStyles.font16BlackBold),
             ),
             SizedBox(width: 12.w),
             TextButton(
               onPressed: () {
-                Navigator.of(context).pushReplacementNamed(Routes.Company_News);
+                Navigator.of(context).pushReplacementNamed(Routes.companynews);
               },
               child: Text('Company News', style: TextStyles.font16BlackBold),
             ),
             SizedBox(width: 12.w),
             TextButton(
               onPressed: () {
-                Navigator.of(context).pushReplacementNamed(Routes.Agenda_Home);
+                Navigator.of(context).pushReplacementNamed(Routes.agendahome);
               },
               child: Text('Agenda', style: TextStyles.font16BlackBold),
             ),
             SizedBox(width: 12.w),
             TextButton(
               onPressed: () {
-                Navigator.of(context).pushReplacementNamed(Routes.Economy_Home);
+                Navigator.of(context).pushReplacementNamed(Routes.economyhome);
               },
               child: Text('Economy', style: TextStyles.font16BlackBold),
             ),
@@ -56,7 +56,7 @@ class _HomeMediumBarState extends State<HomeMediumBar> {
               onPressed: () {
                 Navigator.of(
                   context,
-                ).pushReplacementNamed(Routes.Puplic_offering_Home);
+                ).pushReplacementNamed(Routes.puplicofferinghome);
               },
               child: Text('Public Offering', style: TextStyles.font16BlackBold),
             ),
@@ -65,7 +65,7 @@ class _HomeMediumBarState extends State<HomeMediumBar> {
               onPressed: () {
                 Navigator.of(
                   context,
-                ).pushReplacementNamed(Routes.Crypto_market_Home);
+                ).pushReplacementNamed(Routes.cryptomarkethome);
               },
               child: Text('Crypto Market', style: TextStyles.font16BlackBold),
             ),
@@ -74,14 +74,14 @@ class _HomeMediumBarState extends State<HomeMediumBar> {
               onPressed: () {
                 Navigator.of(
                   context,
-                ).pushReplacementNamed(Routes.Commodity_Home);
+                ).pushReplacementNamed(Routes.commodityhome);
               },
               child: Text('Commodity', style: TextStyles.font16BlackBold),
             ),
             SizedBox(width: 12.w),
             TextButton(
               onPressed: () {
-                Navigator.of(context).pushReplacementNamed(Routes.Gallery_Home);
+                Navigator.of(context).pushReplacementNamed(Routes.galleryhome);
               },
               child: Text('Gallery', style: TextStyles.font16BlackBold),
             ),

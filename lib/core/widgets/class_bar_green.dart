@@ -33,7 +33,7 @@ class ClassBarGreen extends StatelessWidget {
                 // الجزء الأيمن: زر "Home page" مع أيقونة المنزل
                 ElevatedButton(
                   onPressed: () {
-                    Navigator.of(context).pushNamed(Routes.Screen_Home);
+                    Navigator.of(context).pushNamed(Routes. screenhome);
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.white, // خلفية الزر بيضاء

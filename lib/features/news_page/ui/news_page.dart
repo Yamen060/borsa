@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:stock_market/core/widgets/full_screen.dart';
+import 'package:stock_market/features/news_page/ui/widgets/full_screen.dart';
 import 'package:stock_market/core/widgets/share_button.dart';
 import 'package:stock_market/core/widgets/silver_home_medium_bar.dart';
 import 'package:stock_market/core/helpers/spacing.dart';

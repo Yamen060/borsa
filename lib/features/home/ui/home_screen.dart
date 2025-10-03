@@ -12,8 +12,8 @@ import 'package:stock_market/core/widgets/most_read_news.dart';
 import 'package:stock_market/core/widgets/app_drawer.dart';
 import 'package:stock_market/features/home/ui/widgets/auther_card.dart';
 import 'package:stock_market/core/widgets/company_news_class.dart';
-import 'package:stock_market/core/widgets/company_news_picture.dart';
-import 'package:stock_market/features/home/ui/widgets/sidebar/stock_bar.dart';
+import 'package:stock_market/features/home/ui/widgets/company_news_picture.dart';
+import 'package:stock_market/features/home/ui/widgets/stock_bar.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

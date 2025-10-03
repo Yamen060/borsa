@@ -4,59 +4,12 @@ import 'package:stock_market/core/helpers/spacing.dart';
 import 'package:stock_market/core/theming/colors.dart';
 import 'package:stock_market/core/theming/styles.dart';
 
-class CategoriesScreen extends StatelessWidget {
-  const CategoriesScreen({super.key});
+class CategorisPositioned extends StatelessWidget {
+  const CategorisPositioned({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: ColorsManager.white,
-        body: Stack(
-          children: [
-            // AppBar ثابت بالخلفية Gradient
-            AppBar(
-              leadingWidth: 70.w,
-              leading: IconButton(
-                onPressed: () {},
-                icon: Icon(
-                  Icons.arrow_back_ios_new,
-                  color: ColorsManager.darkorange,
-                  size: 20,
-                ),
-              ),
-              title: Text('Category', style: TextStyles.font22gunmetalblueBold),
-              actions: [
-                Padding(
-                  padding: const EdgeInsets.only(right: 14.0),
-                  child: IconButton(
-                    icon: const Icon(Icons.notifications_none_outlined),
-                    onPressed: () {},
-                  ),
-                ),
-              ],
-              toolbarHeight: 100.h,
-              flexibleSpace: Container(
-                height: 158,
-                decoration: const BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: [
-                      Color(0xFFF2F2FF),
-                      Color(0xfff1868A),
-                      Color(0xFFF02926),
-                    ],
-                    stops: [0.0, 53.85, 50.00],
-                  ),
-                ),
-              ),
-
-              elevation: 0,
-            ),
-
-            // هنا Positioned للـ body بحيث يبدأ بعد الـ AppBar
-            Positioned(
+    return Positioned(
               top: 120
                   .h, // يبدأ البودي فوق الـ AppBar (تقدر تعدل الرقم حسب الذوق)
               left: 0,
@@ -198,14 +151,10 @@ class CategoriesScreen extends StatelessWidget {
                   ),
                 ],
               ),
-            ),
-          ],
-        ),
-      ),
-    );
+            );
   }
-
-  // دالة مساعدة لبناء عنصر واحد في القائمة
+}
+// دالة مساعدة لبناء عنصر واحد في القائمة
   Widget _buildCategoryItem(
     BuildContext context, {
     required String title,
@@ -240,4 +189,3 @@ class CategoriesScreen extends StatelessWidget {
       ),
     );
   }
-}

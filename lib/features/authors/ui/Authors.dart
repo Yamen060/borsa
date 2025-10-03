@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stock_market/core/helpers/spacing.dart';
 import 'package:stock_market/core/theming/colors.dart';
 import 'package:stock_market/core/widgets/app_drawer.dart';
-import 'package:stock_market/core/widgets/auther_information.dart';
+import 'package:stock_market/features/authors/ui/widgets/auther_information.dart';
 import 'package:stock_market/core/widgets/class_bar_green.dart';
 import 'package:stock_market/core/widgets/home_medium_bar.dart';
 import 'package:stock_market/core/widgets/home_top_bar.dart';

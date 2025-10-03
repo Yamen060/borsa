@@ -45,7 +45,11 @@ class Polls extends StatelessWidget {
                   ),
                 ),
                 SliverToBoxAdapter(
-                  child: ClassBarGreen(title: 'Poll',icon: Icons.account_box_outlined),),
+                  child: ClassBarGreen(
+                    title: 'Poll',
+                    icon: Icons.account_box_outlined,
+                  ),
+                ),
 
                 SliverToBoxAdapter(
                   child: Image.asset('assets/images/green_lock.png'),
@@ -75,7 +79,7 @@ class Polls extends StatelessWidget {
                             onPressed: () {
                               Navigator.of(
                                 context,
-                              ).pushNamed(Routes.TakeSurvyButton);
+                              ).pushNamed(Routes.takesurvybutton);
                             },
                             child: Text(
                               'Take the Survy',
